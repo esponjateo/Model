@@ -10,18 +10,16 @@ public class SaveSystem : MonoBehaviour
     [SerializeField] GameObject playerModel;
 
 
-    public void Save(Vector3 PlayerPosition, Quaternion PlayerRotation)
+    public void Save(Vector3 PlayerPosition, Quaternion PlayerRotation, int coincount)
     {
-
-
-
 
 
 
         SavePosition savePosition = new SavePosition
         {
             Position = PlayerPosition,
-            Rotation = PlayerRotation
+            Rotation = PlayerRotation,
+            CoinCount = coincount
         };
 
 
@@ -31,7 +29,10 @@ public class SaveSystem : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + "/save.txt", json);
     }
 
-
+    private void Start()
+    {
+        Debug.Log(Application.persistentDataPath);
+    }
 
     public void Load()
     {
@@ -40,8 +41,11 @@ public class SaveSystem : MonoBehaviour
             string Loadfile = File.ReadAllText(Application.persistentDataPath + "/save.txt");
             SavePosition savePosition = JsonUtility.FromJson<SavePosition>(Loadfile);
 
+            TREEDMoveAnim moveAnim = playerModel.GetComponent<TREEDMoveAnim>();
+
             playerModel.transform.position = savePosition.Position;
             playerModel.transform.rotation = savePosition.Rotation;
+            moveAnim.Coinref.TotalCoins = savePosition.CoinCount;
         }
         else
         {
@@ -60,4 +64,5 @@ public class SavePosition
 {
     public Vector3 Position;
     public Quaternion Rotation;
+    public int CoinCount;
 }

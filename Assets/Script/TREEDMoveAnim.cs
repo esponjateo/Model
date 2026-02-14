@@ -3,8 +3,12 @@ using UnityEngine.InputSystem;
 
 public class TREEDMoveAnim : MonoBehaviour
 {
+
+
+
     [SerializeField] float roationFactorPerFrame;
     [SerializeField] SaveSystem SavePosition;
+    public Coin Coinref;
 
     PlayerInputSystem inputSystem;
     CharacterController Controller;
@@ -75,7 +79,7 @@ public class TREEDMoveAnim : MonoBehaviour
 
     private void SavePlayerDetails(InputAction.CallbackContext context)
     {
-        SavePosition.Save(transform.position, transform.rotation);
+        SavePosition.Save(transform.position, transform.rotation, Coinref.TotalCoins);
     }
 
 }
