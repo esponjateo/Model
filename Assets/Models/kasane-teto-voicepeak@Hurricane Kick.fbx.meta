@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 44d5084d168e0b14da9948ad0ce12573
+guid: 3e071b3564150d44891f9886eb22df77
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Body
-    second: {fileID: 2100000, guid: 9a9bb121c6e3fe540ae21f856e2235cf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Clothes
-    second: {fileID: 2100000, guid: b34dfd1b87dc7d745bc52d55db935d6a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Head
-    second: {fileID: 2100000, guid: feb36e1707cd9544b9f0f30e4a12780b, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walking
+      name: Hurricane Kick
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 41
+      lastFrame: 55
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
